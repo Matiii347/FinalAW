@@ -143,3 +143,11 @@ CREATE Table proveedores (
     email VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT NOW() NOT NULL
 );
+
+INSERT INTO
+    proveedores (nombre, telefono, email)
+VALUES (
+        'TecnoGlobal',
+        '11-5555-9999',
+        'contacto@tecnoglobal.com'
+    );

@@ -96,4 +96,4 @@ async function eliminarProveedor(req, res) {
         res.status(500).json({ mensaje: MENSAJES_PROVEEDOR[error.code] || 'Error en el servidor', tipo: MENSAJES_TIPOS.ERROR });
     }
 }
-export { obtenerProductos, obtenerProducto, crearProducto, modificarProducto, eliminarProducto };
+export { obtenerProveedor, obtenerProveedores, crearProveedor, modificarProveedor, eliminarProveedor };

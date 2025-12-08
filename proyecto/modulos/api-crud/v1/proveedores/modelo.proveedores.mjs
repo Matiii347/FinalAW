@@ -81,8 +81,8 @@ async function eliminarProveedor(id) {
 }
 
 export {
-    obtenerProveedores,
     obtenerProveedor,
+    obtenerProveedores,
     crearProveedor,
     modificarProveedor,
     eliminarProveedor,
