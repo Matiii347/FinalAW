@@ -21,13 +21,13 @@ export async function renderizarListado(respuesta) {
             const contenedorProductos =
                 document.getElementById('contenedor-productos');
             let filas = '';
-            datosProductos.forEach((proveedor) => {
+            datosProductos.forEach((proveedores) => {
                 filas += `
                     <tr>                       
-                        <td>${proveedor.nombre}</td>
-                        <td>${proveedor.marca}</td>
-                        <td>${proveedor.stock}</td>
-                        <td><a href="./editar.html?id=${proveedor.id}">Editar</a></td>
+                        <td>${proveedores.nombre}</td>
+                        <td>${proveedores.marca}</td>
+                        <td>${proveedores.stock}</td>
+                        <td><a href="./editar.html?id=${proveedores.id}">Editar</a></td>
                     </tr>
                 `;
             });
