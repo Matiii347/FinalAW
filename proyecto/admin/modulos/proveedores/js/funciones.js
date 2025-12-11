@@ -4,8 +4,8 @@ export async function renderizarFormulario(registros, formulario) {
         if (registros.ok) {
             // Llenar form
             formulario.nombre.value = datos[0].nombre;
-            formulario.marca.value = datos[0].telefono;
-            formulario.stock.value = datos[0].email;
+            formulario.telefono.value = datos[0].telefono;
+            formulario.email.value = datos[0].email;
         } else {
             console.log('Registro no encontrado');
         }
@@ -16,24 +16,24 @@ export async function renderizarFormulario(registros, formulario) {
 }
 export async function renderizarListado(respuesta) {
     try {
-        const datosProductos = await respuesta.json()
+        const datosProveedores = await respuesta.json()
         if (respuesta.ok) {
-            const contenedorProductos =
-                document.getElementById('contenedor-productos');
+            const contenedorProveedores =
+                document.getElementById('contenedor-proveedores');
             let filas = '';
-            datosProductos.forEach((proveedores) => {
+            datosProveedores.forEach((proveedores) => {
                 filas += `
                     <tr>                       
                         <td>${proveedores.nombre}</td>
-                        <td>${proveedores.marca}</td>
-                        <td>${proveedores.stock}</td>
+                        <td>${proveedores.telefono}</td>
+                        <td>${proveedores.email}</td>
                         <td><a href="./editar.html?id=${proveedores.id}">Editar</a></td>
                     </tr>
                 `;
             });
-            contenedorProductos.innerHTML = filas;
+            contenedorProveedores.innerHTML = filas;
         } else {
-            console.log(datosProductos.mensaje);
+            console.log(datosProveedores.mensaje);
         }
     } catch (error) {
         console.log(error);
